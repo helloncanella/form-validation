@@ -27,11 +27,15 @@ The manipulation of the form data (validating and sending) will be done by a wra
 ---> SHOW WRAPPER;
 
 
-The instructions to render and validate the inputs is given below.
+The instructions to render and validate the inputs is described here.
 
 --->
 
+In the future, for example, we can insert a username field and require its value cannot be numerical. With a simple insertion in `fieldsets`, we can do it. The result is given below. 
 
+
+Considering just the number of lines, the solution presented is more verbose. However, futures modifications, such the insertion of more fields and validation rules can add more complexibilities, making the component more prone to errors. The solution adopted avoids theses risks, at same time improves its readablity. 
+ 
 
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Form from './Whatever.jsx'
+import Form from './Form.jsx'
 import './style.scss'
 
 const validateEmail = ({ email }) => {

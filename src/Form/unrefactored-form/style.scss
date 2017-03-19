@@ -1,0 +1,55 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form-wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    align-content: center;
+    margin-top: -1rem;
+}
+
+form{
+    display: table;    
+    padding: 2rem;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    margin: 0 auto;
+
+    input{
+        border-radius: 5px !important;
+
+        &[type="submit"]{
+            box-shadow: none !important;
+            border: none;
+            padding:0.4rem;
+            width:100%;
+            cursor: pointer;
+            background: gray !important;
+            color: white !important;
+        }
+    }
+
+    .error{
+        color: mediumvioletred;
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+}
+
+.sent{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+h1, h2{
+    text-align: center;
+    font-family: 'Dancing Script', cursive !important;
+}
