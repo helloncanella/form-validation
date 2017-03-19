@@ -22,6 +22,7 @@
     "react": "15.4.2",
     "react-addons-transition-group": "^15.4.2",
     "react-dom": "15.4.2",
+    "react-gist-embed": "0.0.3",
     "react-gsap-enhancer": "^0.3.0",
     "sass-loader": "^4.0.2"
   },

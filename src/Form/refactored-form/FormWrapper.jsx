@@ -4,9 +4,7 @@ import fieldsets from './fieldsets.js'
 import FieldsetsValidator from './fieldsets-validator.js'
 import './style.scss'
 
-console.log(fieldsets, 'formWrapper')
-
-export default class FormWrapper extends Component {
+class FormWrapper extends Component {
     constructor() {
         super()
 
@@ -63,3 +61,4 @@ export default class FormWrapper extends Component {
     }
 }
 
+export default FormWrapper

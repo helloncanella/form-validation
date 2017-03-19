@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
-export default class Form extends Component {
+class Form extends Component {
     constructor() {
         super()
         this.onSubmit = this.onSubmit.bind(this)
@@ -71,3 +71,5 @@ export default class Form extends Component {
         )
     }
 }
+
+export default Form
