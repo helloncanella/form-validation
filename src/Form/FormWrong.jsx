@@ -20,11 +20,11 @@ export default class Form extends Component {
         if (!(username && email && password && confirmationPassword)) {
             this.setState({ error: 'one or more fields are empty' })
             return false;
-        } else if (password !== confirmationPassword) {
-            this.setState({ error: 'passwords don\'t match' })
-            return false;
         } else if (!this.validateEmail(email)) {
             this.setState({ error: 'email format is not correct' })
+            return false;
+        } else if (password !== confirmationPassword) {
+            this.setState({ error: 'passwords don\'t match' })
             return false;
         }
 
