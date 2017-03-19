@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Form from './Whatever.jsx'
 import './style.scss'
 
-const fieldSets = [
+const fieldsets = [
     {
         name: "email",
         inputs: [{ name: 'email', type: 'text', placeholder: "email" }],
@@ -13,8 +13,8 @@ const fieldSets = [
         name: "passwords",
         validator: function () { },
         inputs: [
-            { name: 'password', type: 'text', placeholder: "password" },
-            { name: 'confirmation', type: 'text', placeholder: "password confirmation" }
+            { name: 'password', type: 'password', placeholder: "password" },
+            { name: 'confirmation', type: 'password', placeholder: "password confirmation" }
         ],
     },
 
@@ -52,7 +52,7 @@ export default class FormWrapper extends Component {
         return {
             onSubmit: this.onSubmit,
             validationError: this.state.validationError,
-            fieldSets,
+            fieldsets,
             ref: e => this.form = e
         }
     }

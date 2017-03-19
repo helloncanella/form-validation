@@ -5,23 +5,50 @@ export default class Form extends Component {
     constructor() {
         super()
         this.onSubmit = this.onSubmit.bind(this)
-        this.fetchData = this.fetchData.bind(this)
     }
 
+    //public method
+    getData() {
+        return this.data
+    }
+
+
     fetchData() {
-        var data = []
+        let data = {}
 
-        var elements = this.form.querySelectorAll('input:not(*[type="submit"])')
+        const fieldsets = this.form.querySelectorAll("fieldset")
 
-        elements.forEach(({ name, value, type, checked }) => {
-            data[name] = value
+        fieldsets.forEach(fieldset => {
+            const { name } = fieldset
+            data[name] = this.fetchFielsetData(fieldset)
         })
 
         return data
     }
 
-    getData() {
-        return this.data
+    fetchFielsetData(node) {
+        var data = {}
+
+        var inputs = node.querySelectorAll('input:not(*[type="submit"])')
+        inputs.forEach(({ name, value }) => data[name] = value)
+
+        console.log(data)
+
+        return data
+    }
+
+    renderFieldsets() {
+        const { fieldsets } = this.props
+
+        return fieldsets.map(({ name, inputs }, index) => {
+            return <fieldset name={name} key={index}>{this.renderInputs(inputs)}</fieldset>
+        })
+    }
+
+    renderInputs(inputs) {
+        return inputs.map((inputProps, index) => {
+            return <input {...inputProps} key={index} />
+        })
     }
 
     onSubmit(e) {
@@ -29,21 +56,6 @@ export default class Form extends Component {
 
         this.data = this.fetchData()
         this.props.onSubmit()
-    }
-
-    renderFieldsets() {
-        const { fieldSets } = this.props
-
-        return fieldSets.map(({ name, inputs }, index) => {
-            return <fieldset name={name} key={index}>{this.renderInputs(inputs)}</fieldset>
-        })
-
-    }
-
-    renderInputs(inputs) {
-        return inputs.map((inputProps, index) => {
-            return <input {...inputProps} key={index} />
-        })
     }
 
     render() {
