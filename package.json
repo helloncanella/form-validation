@@ -18,7 +18,6 @@
   "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
     "gsap": "^1.19.1",
-    "lodash": "^4.17.4",
     "node-sass": "^4.3.0",
     "react": "15.4.2",
     "react-addons-transition-group": "^15.4.2",
