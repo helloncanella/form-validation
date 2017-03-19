@@ -24,7 +24,7 @@ export function triggerWhenResizeEnds(callback) {
 export function fetchInputsDataFrom(parentNode) {
     let data = {}
 
-    const elements = parentNode.querySelectorAll('input')
+    const elements = parentNode.querySelectorAll('input:not(*[type="submit"])')
 
     elements.forEach(({name, value, type, checked}) => {    
         if(type !=="radio" || type==="radio" && checked) data[name] = value
