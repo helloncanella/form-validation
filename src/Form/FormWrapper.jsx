@@ -2,16 +2,32 @@ import React, { Component } from 'react'
 import Form from './Whatever.jsx'
 import './style.scss'
 
+const validateEmail = ({ email }) => {
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!regex.test(email)) throw 'email format is not correct!'
+}
+
+const validatePasswords = ({ password, confirmation }) => {
+    if (password !== confirmation) throw 'passwords do not match!'
+}
+
+
 const fieldsets = [
+    // {
+    //     name: "username",
+    //     inputs: [{ name: 'username', type: 'text', placeholder: "username" }],
+    //     validator: function ({ username }) { if (!isNaN(username)) { throw 'username cannot be a numbers' } }
+    // },
+
     {
         name: "email",
         inputs: [{ name: 'email', type: 'text', placeholder: "email" }],
-        validator: function () { }
+        validator: validateEmail
     },
 
     {
         name: "passwords",
-        validator: function () { },
+        validator: validatePasswords,
         inputs: [
             { name: 'password', type: 'password', placeholder: "password" },
             { name: 'confirmation', type: 'password', placeholder: "password confirmation" }
@@ -22,14 +38,27 @@ const fieldsets = [
 
 
 class FieldsetsValidator {
-    verifyIfThereIsInputEmpty() {
 
+    verifyIfThereIsInputEmpty(fieldsetsData) {
+        let inputsData = []
+
+        fieldsetsData.forEach(({ inputs }) => {
+            for (let name in inputs) {
+                if (!inputs[name]) throw 'one or more fields are empty'
+            }
+        })
+    }
+
+    validateEachField(data) {
+        fieldsets.forEach(({ name, validator: validate }) => {
+            const inputsData = data.filter(item => item.name === name)[0].inputs
+            if (validate) validate(inputsData)
+        })
     }
 
     validate(data) {
-        console.log(data)
         this.verifyIfThereIsInputEmpty(data)
-        throw 'piuxinho'
+        this.validateEachField(data)
     }
 }
 
@@ -71,6 +100,7 @@ export default class FormWrapper extends Component {
 
     onSubmit() {
         const formData = this.form.getData();
+
         this.validateFields(formData) && this.sendData(formData)
     }
 
