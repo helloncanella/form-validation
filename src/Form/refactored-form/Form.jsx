@@ -12,7 +12,6 @@ export default class Form extends Component {
         return this.data
     }
 
-
     fetchData() {
         let data = []
 

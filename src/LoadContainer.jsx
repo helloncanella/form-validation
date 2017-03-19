@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import FormWrapper from './Form/FormWrapper.jsx'
+import FormWrapper from './Form/refactored-form/FormWrapper.jsx'
 
-
-export default class LoadContainer extends Component {
-  
+export default class LoadContainer extends Component {  
     reload() {
-        this.formWrapper.setState({ dataWasSent: false })
+        this.formWrapper.setState({ dataWasSent: false, validationError: null })
     }
 
     render() {
