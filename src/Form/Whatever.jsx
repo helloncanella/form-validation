@@ -14,25 +14,27 @@ export default class Form extends Component {
 
 
     fetchData() {
-        let data = {}
+        let data = []
 
         const fieldsets = this.form.querySelectorAll("fieldset")
 
         fieldsets.forEach(fieldset => {
             const { name } = fieldset
-            data[name] = this.fetchFielsetData(fieldset)
+
+            data.push({ 
+                name, 
+                inputs: this.fetchInputsData(fieldset) 
+            })
         })
 
         return data
     }
 
-    fetchFielsetData(node) {
+    fetchInputsData(fieldset) {
         var data = {}
 
-        var inputs = node.querySelectorAll('input:not(*[type="submit"])')
+        var inputs = fieldset.querySelectorAll('input:not(*[type="submit"])')
         inputs.forEach(({ name, value }) => data[name] = value)
-
-        console.log(data)
 
         return data
     }

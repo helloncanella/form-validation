@@ -21,6 +21,19 @@ const fieldsets = [
 ]
 
 
+class FieldsetsValidator {
+    verifyIfThereIsInputEmpty() {
+
+    }
+
+    validate(data) {
+        console.log(data)
+        this.verifyIfThereIsInputEmpty(data)
+        throw 'piuxinho'
+    }
+}
+
+
 export default class FormWrapper extends Component {
     constructor() {
         super()
@@ -33,9 +46,22 @@ export default class FormWrapper extends Component {
         this.onSubmit = this.onSubmit.bind(this)
     }
 
+    setError(error) {
+        this.setState({ validationError: error })
+    }
+
     validateFields(formData) {
-        console.log(formData)
+        const validator = new FieldsetsValidator()
+
+        try {
+            validator.validate(formData)
+        } catch (error) {
+            this.setError(error)
+            return false
+        }
+
         return true;
+
     }
 
     sendData() {
