@@ -1,0 +1,89 @@
+.desktop-menu{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 0 !important;
+
+    .marker{
+            position: absolute;
+            transform: rotate(45deg);
+            border-radius: 4px 0 0 0;
+            background: #fff;
+            box-shadow: -3px -3px 5px rgba(82,95,127,.04);
+        }
+
+    ul.menu-items{
+        $p: 1rem;
+        padding-top: $p;
+        padding-bottom: $p;
+        display: flex;
+        align-items: center;
+        padding-bottom: 200px !important;
+
+        &>li{
+            font-size: 1.3rem;
+            list-style:  none;
+            margin-right: 2rem;
+            cursor: pointer;
+            position: relative;
+
+            .item-name:hover{
+                opacity: 0.8;
+            }
+
+            .dropdown-content {
+                padding: 1rem;
+                position: absolute;
+                transform: translateX(-25%);
+                opacity:0;
+                transition: opacity 0.8s;               
+
+
+                .main, .footer{
+                    padding: 20px 35px !important;
+                    overflow: hidden;
+                }
+
+                &.active{
+                    opacity:1;
+                }
+
+                li, .hoverable{
+                    cursor: pointer;
+
+                    &:hover{
+                        $color-hover: #32325d;
+
+                        *, &{
+                            color: $color-hover !important
+                        };
+
+                        .icon-mock{
+                            background: $color-hover !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dropdown-background{
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -1;
+        background:white;
+        border-radius: 4px;
+        box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
+        will-change: height, width, transform;
+        overflow: hidden;
+
+        .footer-background{
+            position: absolute;
+            background: #f1f1f1;
+            height:1000px;
+            width: 100%;
+        }
+
+    }
+
+}

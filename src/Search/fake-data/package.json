@@ -1,0 +1,16 @@
+{
+  "name": "fake-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fake-data-generator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "jsonfile": "^2.4.0"
+  }
+}
