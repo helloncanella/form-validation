@@ -55,7 +55,6 @@ export default class Form extends Component {
 
     onSubmit(e) {
         e.preventDefault()
-
         this.data = this.fetchData()
         this.props.onSubmit()
     }

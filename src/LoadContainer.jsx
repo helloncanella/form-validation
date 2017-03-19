@@ -3,6 +3,7 @@ import FormWrapper from './Form/FormWrapper.jsx'
 
 
 export default class LoadContainer extends Component {
+  
     reload() {
         this.formWrapper.setState({ dataWasSent: false })
     }
@@ -18,4 +19,3 @@ export default class LoadContainer extends Component {
     }
 
 }
-    

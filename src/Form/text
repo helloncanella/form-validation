@@ -1,0 +1,34 @@
+#Refactoring a beautiful form
+
+Consider the form below, a simple one. Beautiful, isn't ?
+
+---> EXIBITION OF COMPONENT.
+
+Its features are restricted to the exibition of three inputs, validated when the submission button is pressed.
+
+One of the ways to model it using React is shown here,
+
+---> SHOW COMPONENT'S CODE
+
+A really patient reading of the code above inform us the component is responsible for to render the inputs, to validate its data and to send it somewhere. 
+
+In fact it works. However, to assign too much responsabilities for a single component can make the mantanability a difficult task.
+
+Just the introduction of one single field and another validation rule require significant changes, violating the "Open/Closed principle"(insert link).
+
+
+
+
+
+
+
+ - USE THE WORD "ERROR PRONE".
+
+- It is also worth noting the long list of parameters in the function 'validateFields' (insert code tag).
+
+
+
+
+
+
+
