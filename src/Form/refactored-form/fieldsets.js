@@ -13,11 +13,11 @@ const validateUsername = ({ username }) => {
 
 
 const fieldsets = [
-    {
-        name: "username",
-        inputs: [{ name: 'username', type: 'text', placeholder: "username" }],
-        validator: validateUsername
-    },
+    // {
+    //     name: "username",
+    //     inputs: [{ name: 'username', type: 'text', placeholder: "username" }],
+    //     validator: validateUsername
+    // },
 
     {
         name: "email",
