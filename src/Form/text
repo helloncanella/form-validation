@@ -16,6 +16,22 @@ In fact it works. However, to assign too much responsabilities for a single comp
 
 Just the introduction of one single field and another validation rule require significant changes, violating the "Open/Closed principle"(insert link).
 
+A mantanability of this component can be hugely improved if you share its responsabilities between other classes.
+
+So, the task of show the inputs and expose its data can be restricted to the same Form component, that will receive by props the instruction to render its inputs.
+
+---> SHOW NEW VERSION OF THE FORM COMPONENT.
+
+The manipulation of the form data (validating and sending) will be done by a wrapper, with the help of external Classes.
+
+---> SHOW WRAPPER;
+
+
+The instructions to render and validate the inputs is given below.
+
+--->
+
+
 
 
 
