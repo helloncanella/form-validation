@@ -12,13 +12,12 @@ const validatePasswords = ({ password, confirmation }) => {
 }
 
 
-const fieldsets = [
-    // {
+const fieldsets = [// {
     //     name: "username",
     //     inputs: [{ name: 'username', type: 'text', placeholder: "username" }],
     //     validator: function ({ username }) { if (!isNaN(username)) { throw 'username cannot be a numbers' } }
     // },
-
+    
     {
         name: "email",
         inputs: [{ name: 'email', type: 'text', placeholder: "email" }],
@@ -100,7 +99,6 @@ export default class FormWrapper extends Component {
 
     onSubmit() {
         const formData = this.form.getData();
-
         this.validateFields(formData) && this.sendData(formData)
     }
 

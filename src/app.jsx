@@ -4,11 +4,13 @@ import React from 'react';
 import Search from './Search/Search.jsx'
 import Form from './Form/FormWrong.jsx'
 import FormWrapper from './Form/FormWrapper.jsx'
+import LoadContainer from './LoadContainer.jsx'
+
 
 export default class App extends React.Component {
   render() {
     return (
-      <FormWrapper />
+      <LoadContainer />
     )
   }
 }
